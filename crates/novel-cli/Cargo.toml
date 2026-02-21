@@ -1,0 +1,23 @@
+[package]
+name = "novel-cli"
+version = { workspace = true }
+edition = { workspace = true }
+rust-version = { workspace = true }
+description = "⚠️ DEMO ONLY - Simple chat CLI demo. Do not use in production."
+readme = { workspace = true }
+license = { workspace = true }
+homepage = { workspace = true }
+repository = { workspace = true }
+keywords = ["demo", "cli", "chat"]
+categories = ["command-line-utilities"]
+authors = ["Chrislearn Young <chris@acroidea.com>"]
+
+[[bin]]
+name = "novel"
+path = "src/main.rs"
+
+[dependencies]
+novel-openai = { workspace = true, features = ["chat-completion"] }
+novel-zhipu = { workspace = true, features = ["chat"] }
+tokio = { workspace = true, features = ["full"] }
+futures-util = { workspace = true }

@@ -1,0 +1,80 @@
+[package]
+name = "novel-doubao"
+version = { workspace = true }
+edition = { workspace = true }
+rust-version = { workspace = true }
+description = "Doubao (ByteDance Volcengine) API client for novel"
+readme = { workspace = true }
+license = { workspace = true }
+documentation = "https://docs.rs/novel-doubao/"
+homepage = { workspace = true }
+repository = { workspace = true }
+keywords = ["doubao", "tts", "asr", "speech", "volcengine"]
+categories = ["api-bindings", "multimedia::audio", "asynchronous"]
+authors = ["Chrislearn Young <chris@acroidea.com>"]
+
+[features]
+default = ["rustls"]
+# Enable rustls for TLS support
+rustls = ["tokio-tungstenite/rustls-tls-native-roots", "reqwest?/rustls-native-certs"]
+# Enable rustls and webpki-roots
+rustls-webpki-roots = ["tokio-tungstenite/rustls-tls-webpki-roots", "reqwest?/rustls"]
+# Enable native-tls for TLS support
+native-tls = ["tokio-tungstenite/native-tls", "reqwest?/native-tls"]
+# Enable native-tls-vendored for TLS support
+native-tls-vendored = ["tokio-tungstenite/native-tls-vendored", "reqwest?/native-tls-vendored"]
+
+# HTTP client support (for Chat, Embeddings, Images, Tokenization APIs)
+http = ["dep:reqwest", "dep:reqwest-eventsource", "dep:tokio-stream"]
+
+# TTS feature (v3 bidirectional WebSocket API and v1 unidirectional APIs)
+tts = ["tts-types"]
+tts-types = ["dep:derive_builder", "dep:bytes", "dep:flate2", "dep:base64", "dep:reqwest"]
+
+# ASR feature (v3 speech recognition API)
+asr = ["asr-types"]
+asr-types = ["dep:derive_builder", "dep:bytes", "dep:reqwest", "dep:base64"]
+
+# Chat completion feature
+chat = ["chat-types", "http"]
+chat-types = ["dep:derive_builder"]
+
+# Embeddings feature
+embeddings = ["embeddings-types", "http"]
+embeddings-types = ["dep:derive_builder"]
+
+# Images generation feature
+images = ["images-types", "http"]
+images-types = ["dep:derive_builder"]
+
+# Tokenization feature
+tokenization = ["tokenization-types", "http"]
+tokenization-types = ["dep:derive_builder"]
+
+# Enable all features
+full = ["tts", "asr", "chat", "embeddings", "images", "tokenization"]
+
+[dependencies]
+derive_builder = { workspace = true, optional = true }
+bytes = { workspace = true, optional = true }
+base64 = { workspace = true, optional = true }
+flate2 = { workspace = true, optional = true, features = ["rust_backend"] }
+futures-util = { workspace = true, features = ["sink"] }
+reqwest = { workspace = true, optional = true, features = ["json"], default-features = false }
+reqwest-eventsource = { workspace = true, optional = true }
+tokio-stream = { workspace = true, optional = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["fs", "macros", "sync"] }
+tokio-tungstenite = { workspace = true, features = ["connect"] }
+tracing = { workspace = true }
+secrecy = { workspace = true, features = ["serde"] }
+uuid = { workspace = true, features = ["v4"] }
+
+[dev-dependencies]
+tokio-test = { workspace = true }
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

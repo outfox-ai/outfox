@@ -1,0 +1,195 @@
+[package]
+name = "novel-openai"
+version = { workspace = true }
+edition = { workspace = true }
+rust-version = { workspace = true }
+description = "Openai for novel"
+readme = { workspace = true }
+license = { workspace = true }
+documentation = "https://docs.rs/novel-openai/"
+homepage = { workspace = true }
+repository = { workspace = true }
+keywords = { workspace = true }
+categories = { workspace = true }
+authors = ["Chrislearn Young <chris@acroidea.com>"]
+
+[features]
+default = ["rustls"]
+# Enable rustls for TLS support
+rustls = ["dep:reqwest", "reqwest/rustls-native-certs"]
+# Enable rustls and webpki-roots
+rustls-webpki-roots = ["dep:reqwest", "reqwest/rustls"]
+# Enable native-tls for TLS support
+native-tls = ["dep:reqwest", "reqwest/native-tls"]
+# Remove dependency on OpenSSL
+native-tls-vendored = ["dep:reqwest", "reqwest/native-tls-vendored"]
+# Bring your own types
+byot = ["dep:novel-openai-macros"]
+
+# API feature flags - these enable both the API wrapper and types
+responses = ["response-types", "_api"]
+webhook = ["webhook-types", "dep:base64", "dep:thiserror", "dep:hmac", "dep:sha2", "dep:hex"]
+# start - Platform APIs
+audio = ["audio-types", "_api"]
+video = ["video-types", "_api"]
+image = ["image-types", "_api"]
+embedding = ["embedding-types", "_api"]
+evals = ["eval-types", "_api"]
+finetuning = ["finetuning-types", "_api"]
+grader = ["grader-types"]
+batch = ["batch-types", "_api"]
+file = ["file-types", "_api"]
+upload = ["upload-types", "_api"]
+model = ["model-types", "_api"]
+moderation = ["moderation-types", "_api"]
+# end - Platform APIs
+vectorstore = ["vectorstore-types", "_api"]
+chatkit = ["chatkit-types", "_api"]
+container = ["container-types", "_api"]
+realtime = ["realtime-types", "_api", "dep:tokio-tungstenite"]
+chat-completion = ["chat-completion-types", "_api"]
+assistant = ["assistant-types", "_api", ]
+administration = ["administration-types", "_api"]
+completions = ["completion-types", "_api"]
+
+# Type feature flags - these enable only the types
+response-types = ["dep:derive_builder"]
+webhook-types = ["dep:derive_builder"]
+audio-types = ["dep:derive_builder", "dep:bytes"]
+video-types = ["dep:derive_builder", "dep:bytes"]
+image-types = ["dep:derive_builder", "dep:bytes"]
+embedding-types = ["dep:derive_builder"]
+eval-types = ["dep:derive_builder", "chat-completion-types", "response-types", "grader-types"]
+finetuning-types = ["dep:derive_builder", "grader-types"]
+grader-types = ["dep:derive_builder", "eval-types"]
+batch-types = ["dep:derive_builder"]
+file-types = ["dep:derive_builder", "dep:bytes"]
+upload-types = ["dep:derive_builder", "dep:bytes", "file-types"]
+model-types = ["dep:derive_builder"]
+moderation-types = ["dep:derive_builder"]
+vectorstore-types = ["dep:derive_builder"]
+chatkit-types = ["dep:derive_builder"]
+container-types = ["dep:derive_builder", "dep:bytes"]
+realtime-types = ["dep:derive_builder", "dep:bytes", "response-types"]
+chat-completion-types = ["dep:derive_builder", "dep:bytes"]
+assistant-types = ["dep:derive_builder"]
+administration-types = ["dep:derive_builder"]
+completion-types = ["dep:derive_builder", "chat-completion-types" ]
+
+# Enable all types
+types = [
+    "response-types",
+    "webhook-types",
+    "audio-types",
+    "video-types",
+    "image-types",
+    "embedding-types",
+    "eval-types",
+    "finetuning-types",
+    "grader-types",
+    "batch-types",
+    "file-types",
+    "upload-types",
+    "model-types",
+    "moderation-types",
+    "vectorstore-types",
+    "chatkit-types",
+    "container-types",
+    "realtime-types",
+    "chat-completion-types",
+    "assistant-types",
+    "administration-types",
+    "completion-types",
+]
+
+# Enable all features
+full = [
+    "responses",
+    "webhook",
+    "audio",
+    "video",
+    "image",
+    "embedding",
+    "evals",
+    "finetuning",
+    "batch",
+    "file",
+    "upload",
+    "model",
+    "moderation",
+    "vectorstore",
+    "chatkit",
+    "container",
+    "realtime",
+    "chat-completion",
+    "assistant",
+    "administration",
+    "completions",
+    "types",
+    "byot",
+]
+
+# Internal feature to enable API dependencies
+_api = [
+    "dep:novel-openai-macros",
+    "dep:backoff",
+    "dep:base64",
+    "dep:bytes",
+    "dep:futures",
+    "dep:rand",
+    "dep:reqwest",
+    "dep:reqwest-eventsource",
+    "dep:thiserror",
+    "dep:tokio",
+    "dep:tokio-stream",
+    "dep:tokio-util",
+    "dep:tracing",
+    "dep:secrecy",
+    "dep:eventsource-stream",
+    "dep:serde_urlencoded",
+    "dep:url",
+]
+
+[dependencies]
+novel-openai-macros = { workspace = true, optional = true}
+backoff = { workspace = true, optional = true, features = ["tokio"] }
+base64 = { workspace = true, optional = true }
+futures = { workspace = true, optional = true }
+rand = { workspace = true, optional = true }
+
+hmac = { workspace = true, optional = true}
+sha2 = { workspace = true, optional = true}
+hex = { workspace = true, optional = true }
+
+reqwest = { workspace = true, optional = true, features = [
+    "json",
+    "stream",
+    "multipart",
+    "query",
+], default-features = false }
+reqwest-eventsource = { workspace = true, optional = true }
+serde = { workspace = true, features = ["derive", "rc"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true, optional = true }
+tokio = { workspace = true, optional = true, features = ["fs", "macros"] }
+tokio-stream = { workspace = true, optional = true }
+tokio-util = { workspace = true, optional = true, features = ["codec", "io-util"] }
+tracing = { workspace = true, optional = true }
+derive_builder = { workspace = true, optional = true  }
+secrecy = { workspace = true, optional = true, features = ["serde"] }
+bytes = { workspace = true, optional = true }
+eventsource-stream = { workspace = true, optional = true }
+serde_urlencoded = { workspace = true, optional = true }
+tokio-tungstenite = { workspace = true, optional = true, default-features = false }
+url = { version = "2.5", optional = true }
+
+[dev-dependencies]
+tokio-test = { workspace = true }
+
+[[test]]
+name = "bring-your-own-type"
+required-features = ["byot"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

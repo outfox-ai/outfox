@@ -1,0 +1,132 @@
+[package]
+name = "novel-zhipu"
+version = { workspace = true }
+edition = { workspace = true }
+rust-version = { workspace = true }
+description = "Zhipu AI (GLM) API client for novel"
+readme = { workspace = true }
+license = { workspace = true }
+documentation = "https://docs.rs/novel-zhipu/"
+homepage = { workspace = true }
+repository = { workspace = true }
+keywords = ["zhipu", "glm", "bigmodel", "ai", "chatgpt"]
+categories = ["api-bindings", "asynchronous"]
+authors.workspace = true
+
+[features]
+default = ["rustls"]
+# Enable rustls for TLS support
+rustls = ["reqwest/rustls-native-certs"]
+# Enable rustls and webpki-roots
+rustls-webpki-roots = ["reqwest/rustls"]
+# Enable native-tls for TLS support
+native-tls = ["reqwest/native-tls"]
+# Enable native-tls-vendored for TLS support
+native-tls-vendored = ["reqwest/native-tls-vendored"]
+
+# Agents API
+agents = ["agents-types"]
+agents-types = ["dep:derive_builder", "videos-types"]
+
+# Speech-to-Text API (ASR)
+asr = ["asr-types"]
+asr-types = ["dep:derive_builder", "dep:bytes", "reqwest/multipart", "dep:base64"]
+
+# Assistant API
+assistant = ["assistant-types"]
+assistant-types = ["dep:derive_builder"]
+
+# Async tasks API (async chat, video, image generation)
+async-task = ["async-task-types", "chat-types", "images-types"]
+async-task-types = ["dep:derive_builder", "chat-types", "images-types"]
+
+# Batch API
+batch = ["batch-types"]
+batch-types = ["dep:derive_builder"]
+
+# Chat completions API
+chat = ["chat-types"]
+chat-types = ["dep:derive_builder"]
+
+# Embeddings API
+embeddings = ["embeddings-types"]
+embeddings-types = ["dep:derive_builder"]
+
+# Files API
+files = ["files-types", "reqwest/multipart", "dep:bytes"]
+files-types = ["dep:derive_builder"]
+
+# Images API
+images = ["images-types"]
+images-types = ["dep:derive_builder", "dep:bytes"]
+
+# OCR API
+ocr = ["ocr-types", "reqwest/multipart", "dep:bytes"]
+ocr-types = []
+
+# Text reranking API
+reranking = ["reranking-types"]
+reranking-types = ["dep:derive_builder"]
+
+# Text tokenizer API
+tokenizer = ["tokenizer-types", "chat-types"]
+tokenizer-types = ["dep:derive_builder", "chat-types"]
+
+# Tool APIs
+tools = ["tools-types", "reqwest/multipart", "dep:bytes"]
+tools-types = ["dep:derive_builder"]
+
+# Text-to-Speech API
+tts = ["tts-types"]
+tts-types = ["dep:derive_builder", "dep:bytes", "dep:base64", "dep:hex"]
+
+# Videos API
+videos = ["videos-types"]
+videos-types = ["dep:derive_builder"]
+
+# Voice API (clone, list, delete)
+voice = ["voice-types"]
+voice-types = ["dep:derive_builder"]
+
+# Enable all features
+full = [
+    "agents",
+    "asr",
+    "assistant",
+    "async-task",
+    "batch",
+    "chat",
+    "embeddings",
+    "files",
+    "images",
+    "ocr",
+    "reranking",
+    "tokenizer",
+    "tools",
+    "tts",
+    "videos",
+    "voice",
+]
+
+[dependencies]
+derive_builder = { workspace = true, optional = true }
+bytes = { workspace = true, optional = true }
+base64 = { workspace = true, optional = true }
+hex = { workspace = true, optional = true, features = ["alloc"] }
+futures-util = { workspace = true, features = ["sink"] }
+reqwest = { workspace = true, features = ["json", "stream"], default-features = false }
+reqwest-eventsource = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["fs", "macros", "sync"] }
+tokio-stream = { workspace = true }
+tracing = { workspace = true }
+secrecy = { workspace = true, features = ["serde"] }
+
+[dev-dependencies]
+tokio-test = { workspace = true }
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

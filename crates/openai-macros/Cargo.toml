@@ -1,0 +1,26 @@
+[package]
+name = "novel-openai-macros"
+version = { workspace = true }
+authors = ["Chrislearn Young <chris@acroidea.com>"]
+edition = { workspace = true }
+rust-version = { workspace = true }
+description = "novel openai proc macros"
+homepage = { workspace = true }
+repository = { workspace = true }
+readme = { workspace = true }
+keywords = { workspace = true }
+license = { workspace = true }
+categories = { workspace = true }
+
+[lib]
+name = "novel_openai_macros"
+path = "src/lib.rs"
+proc-macro = true
+
+[dependencies]
+syn = { workspace = true, features = ["full"] }
+quote = { workspace = true }
+proc-macro2 = { workspace = true }
+
+[lints]
+workspace = true

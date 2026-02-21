@@ -1,0 +1,37 @@
+[package]
+name = "novel"
+version = { workspace = true }
+authors = { workspace = true }
+edition = { workspace = true }
+rust-version = { workspace = true }
+description = { workspace = true }
+homepage = { workspace = true }
+repository = { workspace = true }
+documentation = { workspace = true }
+readme = { workspace = true }
+keywords = { workspace = true }
+license = { workspace = true }
+categories = { workspace = true }
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[features]
+default = []
+
+# Provider features
+openai = ["dep:novel-openai"]
+zhipu = ["dep:novel-zhipu"]
+doubao = ["dep:novel-doubao"]
+
+# Enable all providers
+full = ["openai", "zhipu", "doubao"]
+
+[dependencies]
+novel-openai = { workspace = true, optional = true }
+novel-zhipu = { workspace = true, optional = true }
+novel-doubao = { workspace = true, optional = true }
+
+[lints]
+workspace = true
