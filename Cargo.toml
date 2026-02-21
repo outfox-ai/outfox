@@ -3,7 +3,7 @@ members = ["crates/*"]
 resolver = "3"
 
 [workspace.package]
-version = "0.3.0"
+version = "0.6.0"
 authors = ["Chrislearn Young <chris@acroidea.com>"]
 edition = "2024"
 rust-version = "1.89"
@@ -19,11 +19,11 @@ keywords = ["openai", "async", "openapi", "ai"]
 license = "MIT OR Apache-2.0"
 
 [workspace.dependencies]
-novel = { version = "0.3.0", path = "crates/novel", default-features = false }
-novel-openai = { version = "0.3.0", path = "crates/openai", default-features = false }
-novel-openai-macros = { version = "0.3.0", path = "crates/openai-macros", default-features = false }
-novel-doubao = { version = "0.3.0", path = "crates/doubao", default-features = false }
-novel-zhipu = { version = "0.3.0", path = "crates/zhipu", default-features = false }
+novel = { version = "0.6.0", path = "crates/novel", default-features = false }
+novel-openai = { version = "0.6.0", path = "crates/openai", default-features = false }
+novel-openai-macros = { version = "0.6.0", path = "crates/openai-macros", default-features = false }
+novel-doubao = { version = "0.6.0", path = "crates/doubao", default-features = false }
+novel-zhipu = { version = "0.6.0", path = "crates/zhipu", default-features = false }
 
 aead = "0.5"
 aes-gcm = "0.10"
