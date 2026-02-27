@@ -19,8 +19,8 @@ use crate::tts::Tts;
 /// # Example
 ///
 /// ```no_run
-/// use novel_doubao::Client;
-/// use novel_doubao::config::DoubaoConfig;
+/// use outfox_doubao::Client;
+/// use outfox_doubao::config::DoubaoConfig;
 ///
 /// // Create a client with default configuration from environment variables.
 /// let client = Client::new();

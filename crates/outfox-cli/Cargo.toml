@@ -1,5 +1,5 @@
 [package]
-name = "novel-cli"
+name = "outfox-cli"
 version = { workspace = true }
 edition = { workspace = true }
 rust-version = { workspace = true }
@@ -13,11 +13,11 @@ categories = ["command-line-utilities"]
 authors = ["Chrislearn Young <chris@acroidea.com>"]
 
 [[bin]]
-name = "novel"
+name = "outfox"
 path = "src/main.rs"
 
 [dependencies]
-novel-openai = { workspace = true, features = ["chat-completion"] }
-novel-zhipu = { workspace = true, features = ["chat"] }
+outfox-openai = { workspace = true, features = ["chat-completion"] }
+outfox-zhipu = { workspace = true, features = ["chat"] }
 tokio = { workspace = true, features = ["full"] }
 futures-util = { workspace = true }

@@ -1,10 +1,10 @@
 [package]
-name = "novel-openai-macros"
+name = "outfox-openai-macros"
 version = { workspace = true }
 authors = ["Chrislearn Young <chris@acroidea.com>"]
 edition = { workspace = true }
 rust-version = { workspace = true }
-description = "novel openai proc macros"
+description = "outfox openai proc macros"
 homepage = { workspace = true }
 repository = { workspace = true }
 readme = { workspace = true }
@@ -13,7 +13,7 @@ license = { workspace = true }
 categories = { workspace = true }
 
 [lib]
-name = "novel_openai_macros"
+name = "outfox_openai_macros"
 path = "src/lib.rs"
 proc-macro = true
 

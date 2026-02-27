@@ -3,8 +3,8 @@
 //! ## Creating a client
 //!
 //! ```no_run
-//! use novel_zhipu::Client;
-//! use novel_zhipu::config::ZhipuConfig;
+//! use outfox_zhipu::Client;
+//! use outfox_zhipu::config::ZhipuConfig;
 //!
 //! // Create a client with default configuration from environment variables.
 //! let client = Client::new();
@@ -18,8 +18,8 @@
 //!
 //! ```no_run
 //! # tokio_test::block_on(async {
-//! use novel_zhipu::Client;
-//! use novel_zhipu::spec::chat::{ChatMessage, CreateChatCompletionRequestArgs, Model};
+//! use outfox_zhipu::Client;
+//! use outfox_zhipu::spec::chat::{ChatMessage, CreateChatCompletionRequestArgs, Model};
 //!
 //! let client = Client::new();
 //!
@@ -42,8 +42,8 @@
 //! ```no_run
 //! # tokio_test::block_on(async {
 //! use futures_util::StreamExt;
-//! use novel_zhipu::Client;
-//! use novel_zhipu::spec::chat::{ChatMessage, CreateChatCompletionRequestArgs};
+//! use outfox_zhipu::Client;
+//! use outfox_zhipu::spec::chat::{ChatMessage, CreateChatCompletionRequestArgs};
 //!
 //! let client = Client::new();
 //!
@@ -68,7 +68,7 @@
 //!
 //! ```no_run
 //! # tokio_test::block_on(async {
-//! use novel_zhipu::Client;
+//! use outfox_zhipu::Client;
 //!
 //! let client = Client::new();
 //!
@@ -86,7 +86,7 @@
 //!
 //! ```no_run
 //! # tokio_test::block_on(async {
-//! use novel_zhipu::Client;
+//! use outfox_zhipu::Client;
 //!
 //! let client = Client::new();
 //!
@@ -109,7 +109,7 @@
 //!
 //! ```no_run
 //! # tokio_test::block_on(async {
-//! use novel_zhipu::Client;
+//! use outfox_zhipu::Client;
 //!
 //! let client = Client::new();
 //!
@@ -125,7 +125,7 @@
 //!
 //! ```no_run
 //! # tokio_test::block_on(async {
-//! use novel_zhipu::Client;
+//! use outfox_zhipu::Client;
 //!
 //! let client = Client::new();
 //!

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script to sync async-openai files to novel/crates/openai/ with comparison
+Script to sync async-openai files to outfox/crates/openai/ with comparison
 """
 
 import os
@@ -72,7 +72,7 @@ def main():
         os.path.join("..", "..", "..", "async-openai", "async-openai", "src")
     )
     dst_dir = os.path.abspath(
-        os.path.join("..", "..", "novel", "crates", "openai", "src")
+        os.path.join("..", "..", "outfox", "crates", "openai", "src")
     )
 
     print("=== Step 3: Syncing files ===")

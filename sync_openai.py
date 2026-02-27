@@ -91,7 +91,7 @@ def sync_files() -> Tuple[int, int, int, int, List[str]]:
 
 def main():
     print("=" * 60)
-    print("Syncing files from async-openai to novel")
+    print("Syncing files from async-openai to outfox")
     print("=" * 60)
     print(f"Source: {SRC_ROOT.resolve()}")
     print(f"Destination: {DST_ROOT.resolve()}")

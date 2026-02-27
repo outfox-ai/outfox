@@ -1,5 +1,5 @@
 //! This test is primarily to make sure that macros_rules for From traits are correct.
-use novel_openai::spec::Prompt;
+use outfox_openai::spec::Prompt;
 
 fn prompt_input<T>(input: T) -> Prompt
 where

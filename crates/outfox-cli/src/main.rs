@@ -1,6 +1,6 @@
 //! ⚠️ DEMO ONLY - Do not use or waste time on this!
 //!
-//! This is a simple chat demo to show how to use novel SDKs.
+//! This is a simple chat demo to show how to use outfox SDKs.
 //! It's not meant for production use.
 
 use std::io::{self, Write};
@@ -13,7 +13,7 @@ const BANNER: &str = r#"
 ║                                                               ║
 ║   ⚠️  WARNING: THIS IS JUST A DEMO - DON'T WASTE TIME ON IT!  ║
 ║                                                               ║
-║   A simple chat demo for novel SDKs.                          ║
+║   A simple chat demo for outfox SDKs.                          ║
 ║   Type 'quit' or 'exit' to exit.                              ║
 ║   Type 'openai' or 'zhipu' to switch provider.                ║
 ║                                                               ║
@@ -90,8 +90,8 @@ async fn main() {
 }
 
 async fn chat_openai(input: &str) -> Result<String, Box<dyn std::error::Error>> {
-    use novel_openai::Client;
-    use novel_openai::spec::chat::{
+    use outfox_openai::Client;
+    use outfox_openai::spec::chat::{
         ChatCompletionRequestMessage, ChatCompletionRequestUserMessage,
         CreateChatCompletionRequestBuilder,
     };
@@ -131,8 +131,8 @@ async fn chat_openai(input: &str) -> Result<String, Box<dyn std::error::Error>> 
 }
 
 async fn chat_zhipu(input: &str) -> Result<String, Box<dyn std::error::Error>> {
-    use novel_zhipu::Client;
-    use novel_zhipu::spec::chat::{ChatMessage, CreateChatCompletionRequestArgs};
+    use outfox_zhipu::Client;
+    use outfox_zhipu::spec::chat::{ChatMessage, CreateChatCompletionRequestArgs};
 
     let client = Client::new();
 

@@ -1,4 +1,4 @@
-use novel_openai::spec::{
+use outfox_openai::spec::{
     ChatCompletionRequestSystemMessageArgs, ChatCompletionRequestUserMessageArgs,
     CreateChatCompletionRequest, CreateChatCompletionRequestArgs,
 };

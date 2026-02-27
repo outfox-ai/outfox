@@ -1,12 +1,12 @@
 [package]
-name = "novel-openai"
+name = "outfox-openai"
 version = { workspace = true }
 edition = { workspace = true }
 rust-version = { workspace = true }
-description = "Openai for novel"
+description = "Openai for outfox"
 readme = { workspace = true }
 license = { workspace = true }
-documentation = "https://docs.rs/novel-openai/"
+documentation = "https://docs.rs/outfox-openai/"
 homepage = { workspace = true }
 repository = { workspace = true }
 keywords = { workspace = true }
@@ -24,7 +24,7 @@ native-tls = ["dep:reqwest", "reqwest/native-tls"]
 # Remove dependency on OpenSSL
 native-tls-vendored = ["dep:reqwest", "reqwest/native-tls-vendored"]
 # Bring your own types
-byot = ["dep:novel-openai-macros"]
+byot = ["dep:outfox-openai-macros"]
 
 # API feature flags - these enable both the API wrapper and types
 responses = ["response-types", "_api"]
@@ -131,7 +131,7 @@ full = [
 
 # Internal feature to enable API dependencies
 _api = [
-    "dep:novel-openai-macros",
+    "dep:outfox-openai-macros",
     "dep:backoff",
     "dep:base64",
     "dep:bytes",
@@ -151,7 +151,7 @@ _api = [
 ]
 
 [dependencies]
-novel-openai-macros = { workspace = true, optional = true}
+outfox-openai-macros = { workspace = true, optional = true}
 backoff = { workspace = true, optional = true, features = ["tokio"] }
 base64 = { workspace = true, optional = true }
 futures = { workspace = true, optional = true }

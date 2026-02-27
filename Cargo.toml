@@ -10,20 +10,20 @@ rust-version = "1.89"
 description = """
 Experimental AI API client library for Rust.
 """
-homepage = "https://github.com/taidge/novel"
-repository = "https://github.com/taidge/novel"
-documentation = "https://docs.rs/novel/"
+homepage = "https://github.com/taidge/outfox"
+repository = "https://github.com/taidge/outfox"
+documentation = "https://docs.rs/outfox/"
 readme = "./README.md"
 categories = ["api-bindings", "web-programming", "asynchronous"]
 keywords = ["openai", "async", "openapi", "ai"]
 license = "MIT OR Apache-2.0"
 
 [workspace.dependencies]
-novel = { version = "0.6.0", path = "crates/novel", default-features = false }
-novel-openai = { version = "0.6.0", path = "crates/openai", default-features = false }
-novel-openai-macros = { version = "0.6.0", path = "crates/openai-macros", default-features = false }
-novel-doubao = { version = "0.6.0", path = "crates/doubao", default-features = false }
-novel-zhipu = { version = "0.6.0", path = "crates/zhipu", default-features = false }
+outfox = { version = "0.6.0", path = "crates/outfox", default-features = false }
+outfox-openai = { version = "0.6.0", path = "crates/openai", default-features = false }
+outfox-openai-macros = { version = "0.6.0", path = "crates/openai-macros", default-features = false }
+outfox-doubao = { version = "0.6.0", path = "crates/doubao", default-features = false }
+outfox-zhipu = { version = "0.6.0", path = "crates/zhipu", default-features = false }
 
 aead = "0.5"
 aes-gcm = "0.10"

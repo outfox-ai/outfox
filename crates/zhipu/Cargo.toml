@@ -1,12 +1,12 @@
 [package]
-name = "novel-zhipu"
+name = "outfox-zhipu"
 version = { workspace = true }
 edition = { workspace = true }
 rust-version = { workspace = true }
-description = "Zhipu AI (GLM) API client for novel"
+description = "Zhipu AI (GLM) API client for outfox"
 readme = { workspace = true }
 license = { workspace = true }
-documentation = "https://docs.rs/novel-zhipu/"
+documentation = "https://docs.rs/outfox-zhipu/"
 homepage = { workspace = true }
 repository = { workspace = true }
 keywords = ["zhipu", "glm", "bigmodel", "ai", "chatgpt"]

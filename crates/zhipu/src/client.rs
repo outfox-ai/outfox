@@ -39,8 +39,8 @@ use crate::voice::Voice;
 /// # Example
 ///
 /// ```no_run
-/// use novel_zhipu::Client;
-/// use novel_zhipu::config::ZhipuConfig;
+/// use outfox_zhipu::Client;
+/// use outfox_zhipu::config::ZhipuConfig;
 ///
 /// // Create a client with default configuration from environment variables.
 /// let client = Client::new();

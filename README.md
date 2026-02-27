@@ -1,5 +1,5 @@
 
-Novel is experimental AI API client library for Rust. Do not use in production.
+Outfox is experimental AI API client library for Rust. Do not use in production.
 
 ## ⚠️ License
 

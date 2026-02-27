@@ -1,5 +1,5 @@
 [package]
-name = "novel"
+name = "outfox"
 version = { workspace = true }
 authors = { workspace = true }
 edition = { workspace = true }
@@ -21,17 +21,17 @@ rustdoc-args = ["--cfg", "docsrs"]
 default = []
 
 # Provider features
-openai = ["dep:novel-openai"]
-zhipu = ["dep:novel-zhipu"]
-doubao = ["dep:novel-doubao"]
+openai = ["dep:outfox-openai"]
+zhipu = ["dep:outfox-zhipu"]
+doubao = ["dep:outfox-doubao"]
 
 # Enable all providers
 full = ["openai", "zhipu", "doubao"]
 
 [dependencies]
-novel-openai = { workspace = true, optional = true }
-novel-zhipu = { workspace = true, optional = true }
-novel-doubao = { workspace = true, optional = true }
+outfox-openai = { workspace = true, optional = true }
+outfox-zhipu = { workspace = true, optional = true }
+outfox-doubao = { workspace = true, optional = true }
 
 [lints]
 workspace = true

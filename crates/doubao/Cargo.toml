@@ -1,12 +1,12 @@
 [package]
-name = "novel-doubao"
+name = "outfox-doubao"
 version = { workspace = true }
 edition = { workspace = true }
 rust-version = { workspace = true }
-description = "Doubao (ByteDance Volcengine) API client for novel"
+description = "Doubao (ByteDance Volcengine) API client for outfox"
 readme = { workspace = true }
 license = { workspace = true }
-documentation = "https://docs.rs/novel-doubao/"
+documentation = "https://docs.rs/outfox-doubao/"
 homepage = { workspace = true }
 repository = { workspace = true }
 keywords = ["doubao", "tts", "asr", "speech", "volcengine"]

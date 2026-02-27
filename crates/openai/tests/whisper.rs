@@ -1,5 +1,5 @@
-use novel_openai::Client;
-use novel_openai::spec::{CreateTranscriptionRequestArgs, CreateTranslationRequestArgs};
+use outfox_openai::Client;
+use outfox_openai::spec::{CreateTranscriptionRequestArgs, CreateTranslationRequestArgs};
 use tokio_test::assert_err;
 
 #[tokio::test]

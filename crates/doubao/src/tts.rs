@@ -45,8 +45,8 @@ impl<'c> Tts<'c> {
     ///
     /// ```no_run
     /// # tokio_test::block_on(async {
-    /// use novel_doubao::Client;
-    /// use novel_doubao::spec::tts::CreateSpeechRequestArgs;
+    /// use outfox_doubao::Client;
+    /// use outfox_doubao::spec::tts::CreateSpeechRequestArgs;
     ///
     /// let client = Client::new();
     /// let request = CreateSpeechRequestArgs::default()
@@ -73,8 +73,8 @@ impl<'c> Tts<'c> {
     ///
     /// ```no_run
     /// # tokio_test::block_on(async {
-    /// use novel_doubao::Client;
-    /// use novel_doubao::spec::tts::CreateSpeechRequestArgs;
+    /// use outfox_doubao::Client;
+    /// use outfox_doubao::spec::tts::CreateSpeechRequestArgs;
     ///
     /// let client = Client::new();
     /// let request = CreateSpeechRequestArgs::default()
@@ -101,8 +101,8 @@ impl<'c> Tts<'c> {
     ///
     /// ```no_run
     /// # tokio_test::block_on(async {
-    /// use novel_doubao::Client;
-    /// use novel_doubao::spec::tts::CreateSpeechRequestArgs;
+    /// use outfox_doubao::Client;
+    /// use outfox_doubao::spec::tts::CreateSpeechRequestArgs;
     ///
     /// let client = Client::new();
     /// let request = CreateSpeechRequestArgs::default()

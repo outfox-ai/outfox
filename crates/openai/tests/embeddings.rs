@@ -1,5 +1,5 @@
 //! This test is primarily to make sure that macros_rules for From traits are correct.
-use novel_openai::spec::EmbeddingInput;
+use outfox_openai::spec::EmbeddingInput;
 
 fn embedding_input<T>(input: T) -> EmbeddingInput
 where

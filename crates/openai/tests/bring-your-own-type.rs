@@ -3,11 +3,11 @@
 use std::pin::Pin;
 
 use futures::Stream;
-use novel_openai::Client;
-use novel_openai::error::OpenAIError;
+use outfox_openai::Client;
+use outfox_openai::error::OpenAIError;
 use serde_json::{Value, json};
 
-impl novel_openai::traits::AsyncTryFrom<MyJson> for reqwest::multipart::Form {
+impl outfox_openai::traits::AsyncTryFrom<MyJson> for reqwest::multipart::Form {
     type Error = OpenAIError;
     async fn try_from(_value: MyJson) -> Result<Self, Self::Error> {
         Ok(reqwest::multipart::Form::new())

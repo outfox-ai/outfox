@@ -3,8 +3,8 @@
 //! ## Creating client
 //!
 //! ```
-//! use novel_openai::Client;
-//! use novel_openai::config::OpenAIConfig;
+//! use outfox_openai::Client;
+//! use outfox_openai::config::OpenAIConfig;
 //!
 //! // Create a OpenAI client with api key from env var OPENAI_API_KEY and default base url.
 //! let client = Client::new();
@@ -35,8 +35,8 @@
 //! ```
 //! # tokio_test::block_on(async {
 //!
-//! use novel_openai::Client;
-//! use novel_openai::spec::responses::CreateResponseArgs;
+//! use outfox_openai::Client;
+//! use outfox_openai::spec::responses::CreateResponseArgs;
 //!
 //! // Create client
 //! let client = Client::new();
@@ -69,7 +69,7 @@
 //! ```
 //! # #[cfg(feature = "byot")]
 //! # tokio_test::block_on(async {
-//! use novel_openai::Client;
+//! use outfox_openai::Client;
 //! use serde_json::{Value, json};
 //!
 //! let client = Client::new();
@@ -232,9 +232,9 @@
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
 #[cfg(all(feature = "_api", feature = "byot"))]
-pub(crate) use novel_openai_macros::byot;
+pub(crate) use outfox_openai_macros::byot;
 #[cfg(all(feature = "_api", not(feature = "byot")))]
-pub(crate) use novel_openai_macros::byot_passthrough as byot;
+pub(crate) use outfox_openai_macros::byot_passthrough as byot;
 
 // #[cfg(all(not(feature = "_api"), not(feature = "byot")))]
 // #[macro_export]

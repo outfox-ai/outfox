@@ -1,7 +1,7 @@
 use futures::StreamExt;
 use futures::future::{BoxFuture, FutureExt};
-use novel_openai::Client;
-use novel_openai::spec::{CompletionResponseStream, CreateCompletionRequestArgs};
+use outfox_openai::Client;
+use outfox_openai::spec::{CompletionResponseStream, CreateCompletionRequestArgs};
 
 #[tokio::test]
 async fn boxed_future_test() {

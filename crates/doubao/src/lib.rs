@@ -12,8 +12,8 @@
 //! ## Creating a client
 //!
 //! ```no_run
-//! use novel_doubao::Client;
-//! use novel_doubao::config::DoubaoConfig;
+//! use outfox_doubao::Client;
+//! use outfox_doubao::config::DoubaoConfig;
 //!
 //! // Create a client with default configuration from environment variables.
 //! let client = Client::new();
@@ -31,8 +31,8 @@
 //!
 //! ```no_run
 //! # tokio_test::block_on(async {
-//! use novel_doubao::Client;
-//! use novel_doubao::spec::tts::CreateSpeechRequestArgs;
+//! use outfox_doubao::Client;
+//! use outfox_doubao::spec::tts::CreateSpeechRequestArgs;
 //!
 //! let client = Client::new();
 //!
@@ -58,7 +58,7 @@
 //!
 //! ```no_run
 //! # tokio_test::block_on(async {
-//! use novel_doubao::Client;
+//! use outfox_doubao::Client;
 //!
 //! let client = Client::new();
 //!
@@ -78,7 +78,7 @@
 //!
 //! ```no_run
 //! # tokio_test::block_on(async {
-//! use novel_doubao::Client;
+//! use outfox_doubao::Client;
 //!
 //! let client = Client::new();
 //!
@@ -99,8 +99,8 @@
 //! ```no_run
 //! # tokio_test::block_on(async {
 //! use bytes::Bytes;
-//! use novel_doubao::Client;
-//! use novel_doubao::spec::asr::StreamingAsrConfigArgs;
+//! use outfox_doubao::Client;
+//! use outfox_doubao::spec::asr::StreamingAsrConfigArgs;
 //!
 //! let client = Client::new();
 //!
